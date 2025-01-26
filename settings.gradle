@@ -1,0 +1,4 @@
+rootProject.name = 'news-feed-summarizer'
+
+include 'news-fetcher-service'
+include 'summarization-service'
