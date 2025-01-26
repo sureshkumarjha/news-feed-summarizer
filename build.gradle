@@ -5,7 +5,7 @@ plugins {
 }
 
 allprojects {
-	group = 'com.sureshkumarjha.io.newsfeedsummarizer'
+	group = 'com.sureshkumarjha.newsfeedsummarizer'
 	version = '1.0.0'
 
 	repositories {

@@ -1,4 +1,4 @@
-package com.sureshkumarjha.io.newsfeedsummarizer.summarization_service;
+package com.sureshkumarjha.newsfeedsummarizer.summarization;
 
 import static org.junit.jupiter.api.Assertions.*;
 
