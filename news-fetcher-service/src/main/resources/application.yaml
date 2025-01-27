@@ -1,0 +1,39 @@
+spring:
+  application:
+    name: news-fetcher-service
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: news-feed-summarizer
+  kafka:
+    topic:
+      name: raw-news-feed-topic
+    producer:
+      client:
+        id: news-fetcher-service
+      bootstrap-servers: localhost:19092,localhost:29092
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+      properties:
+        partitioner.class: org.apache.kafka.clients.producer.RoundRobinPartitioner
+
+server:
+  port: 8081
+  servlet:
+    context-path: /news-fetcher-service
+
+news:
+  rss:
+    cron-schedule: "0 */15 * * * *"  # Every 15 minutes
+    sources:
+#      - name: "Times of India"
+#        url: "https://timesofindia.indiatimes.com/rssfeeds/66949542.cms"
+#        category: "TOI Tech"
+      - name: "Tech Crunch"
+        url: "https://techcrunch.com/feed/"
+        category: "tech"
+
+#logging:
+#  level:
+#    org.apache.kafka: DEBUG

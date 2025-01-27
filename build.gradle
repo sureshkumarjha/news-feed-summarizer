@@ -23,14 +23,20 @@ subprojects {
 		implementation 'org.springframework.boot:spring-boot-starter'
 		implementation 'org.springframework.boot:spring-boot-starter-web'
 
-		// Testing
-		testImplementation 'org.springframework.boot:spring-boot-starter-test'
-
 		// Kafka
 		implementation 'org.springframework.kafka:spring-kafka'
 
+		// Testing
+		testImplementation 'org.springframework.boot:spring-boot-starter-test'
+		testImplementation 'org.springframework.kafka:spring-kafka-test'
+
 		// Database
 		runtimeOnly 'org.postgresql:postgresql'
+
+		implementation 'org.springframework.boot:spring-boot-starter-data-mongodb'
+
+		compileOnly 'org.projectlombok:lombok:1.18.30'
+		annotationProcessor 'org.projectlombok:lombok:1.18.30'
 
 	}
 
