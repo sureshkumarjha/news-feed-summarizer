@@ -34,6 +34,6 @@ news:
         url: "https://techcrunch.com/feed/"
         category: "tech"
 
-#logging:
-#  level:
-#    org.apache.kafka: DEBUG
+logging:
+  level:
+    org.apache.kafka: DEBUG

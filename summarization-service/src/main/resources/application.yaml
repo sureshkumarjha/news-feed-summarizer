@@ -1,0 +1,34 @@
+spring:
+  application:
+    name: news-summarization-service
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: news-feed-summarizer
+  kafka:
+    topic:
+      name: raw-news-feed-topic
+    consumer:
+      client:
+        id: summarization-service
+      bootstrap-servers: localhost:19092,localhost:29092
+      group-id: summarization-service-group
+      auto-offset-reset: earliest
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+  ai:
+    ollama:
+      base-url: http://localhost:11434
+      chat:
+        model: deepseek-r1:1.5b
+
+server:
+  port: 8082
+  servlet:
+    context-path: /summarization-service
+
+
+#logging:
+#  level:
+#    org.apache.kafka: DEBUG

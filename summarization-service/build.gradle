@@ -2,4 +2,6 @@ plugins {
 }
 
 dependencies {
+    implementation 'org.springframework.ai:spring-ai-ollama-spring-boot-starter:1.0.0-M5'
+    implementation project(':common')
 }
